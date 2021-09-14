@@ -49,7 +49,7 @@
 |PUT|api/periods/{id}/close|close pay period by ID|
 |DELETE|api/periods/{id}|delete pay period by ID|
 
-### api/vendors{#api-vendors}
+### api/vendors {#api-vendors}
 
 Returns the following JSON object:
 
