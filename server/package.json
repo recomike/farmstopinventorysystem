@@ -5,8 +5,8 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon --exec \"npm run lint && node src/app.js\"",
-    "lint": "eslint **/*.js"
+    "debug": "nodemon --inspect --exec \"npm run lint && node src/app.js\"",
+    "lint": "eslint src/**/*.js"
   },
   "keywords": [],
   "author": "",
@@ -26,5 +26,8 @@
     "eslint-plugin-vue": "^7.17.0",
     "lint-fix-nodemon": "^1.1.0",
     "nodemon": "^2.0.12"
-  }
+  },
+  "eslintIgnore": [
+    "node_modules/*"
+  ]
 }

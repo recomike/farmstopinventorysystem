@@ -5,11 +5,44 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-chrome",
+            "name": "Launch via NPM",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "runtimeArgs": [
+                "run-script",
+                "debug"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/server/src"
+        },
+        {
+            "type": "pwa-node",
+            "request": "attach",
+            "name": "Launch Server via Nodemon",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "processId": "${command:PickProcess}",
+            "restart": true,
+            "protocol": "inspector",
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Debug server and client",
+            "configurations": [
+                "Launch via NPM",
+                "Launch Chrome"
+            ]
         }
     ]
 }
