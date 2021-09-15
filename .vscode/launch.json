@@ -40,7 +40,7 @@
         {
             "name": "Debug server and client",
             "configurations": [
-                "Launch via NPM",
+                "Launch Server via Nodemon",
                 "Launch Chrome"
             ]
         }
